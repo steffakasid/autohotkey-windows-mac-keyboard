@@ -29,60 +29,60 @@ F10::SendInput {Volume_Mute}
 F11::SendInput {Volume_Down}
 F12::SendInput {Volume_Up}
 
-; swap left command/windows key with left alt
-;LWin::LAlt
-;LAlt::LWin ; add a semicolon in front of this line if you want to disable the windows key
+; remap original pos1, end
+LWin & Left:: SendInput {Home}
+LWin & Right:: SendInput {End}
 
 ; Eject Key
 ;F20::SendInput {Insert} ; F20 doesn't show up on AHK anymore, see #3
 
 ; F13-15, standard windows mapping
-F13::SendInput {PrintScreen}
-F14::SendInput {ScrollLock}
-F15::SendInput {Pause}
+;F13::SendInput {PrintScreen}
+;F14::SendInput {ScrollLock}
+;F15::SendInput {Pause}
 
 ;F16-19 custom app launchers, see http://www.autohotkey.com/docs/Tutorial.htm for usage info
-F16::Run http://twitter.com
-F17::Run http://tumblr.com
-F18::Run http://www.reddit.com
-F19::Run https://facebook.com
+;F16::Run http://twitter.com
+;F17::Run http://tumblr.com
+;F18::Run http://www.reddit.com
+;F19::Run https://facebook.com
 
 ; --------------------------------------------------------------
 ; OS X system shortcuts
 ; --------------------------------------------------------------
 
-; Make Ctrl + S work with cmd (windows) key
-#s::^s
+; Make Ctrl + S work with cmd (windows)
+#s::Send, ^s
 
 ; Selecting
-#a::^a
+#a::Send, ^a
 
 ; Copying
-#c::^c
+#c::Send, ^c
 
 ; Pasting
-#v::^v
+#v::Send, ^v
 
 ; Cutting
-#x::^x
+#x::Send, ^x
 
 ; Opening
-#o::^o
+#o::Send, ^o
 
 ; Finding
-#f::Send ^f
+#f::Send, ^f
 
 ; Undo
-#z::^z
+#z::Send, ^z
 
 ; Redo
-#y::^y
+#y::Send, ^y
 
 ; New tab
-#t::^t
+#t::Send, ^t
 
 ; close tab
-#w::^w
+#w::Send, ^w
 
 ; Close windows (cmd + q to Alt + F4)
 #q::Send !{F4}
@@ -143,9 +143,17 @@ Lwin & Tab::AltTab
 ; Map Alt + N to ~
 !n::SendInput {~}
 
-; Map Alt + 3 to #
-!3::SendInput {#}
+; Map ^ to <
+^::<
 
+; Map Shift + ^
+Shift & ^::>
+
+; Map < to ^
+<::^
+
+; Map > to °
+Shift & <::°
 
 
 ; --------------------------------------------------------------
@@ -164,7 +172,7 @@ Lwin & Tab::AltTab
 ; --------------------------------------------------------------
 
 ; Google Chrome
-#IfWinActive, ahk_class Chrome_WidgetWin_1
+#IfWinActive, ahk_class Chrome_WidgetWin_1c
 
 ; Show Web Developer Tools with cmd + alt + i
 #!i::Send {F12}
@@ -173,4 +181,3 @@ Lwin & Tab::AltTab
 #!u::Send ^u
 
 #IfWinActive
-

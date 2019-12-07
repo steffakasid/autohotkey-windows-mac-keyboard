@@ -1,0 +1,19 @@
+= Use Mac keyboard with AutoHotkey under Windows
+
+This [AutoHotkey](http://www.autohotkey.com/) configuration file makes usual keyboard shortcuts work with an Apple keyboard on Windows. It has been testet with a german keyboard layout, but should work under different layouts as well.
+
+== Installation
+
+- Install [AutoHotkey](http://www.autohotkey.com/) 
+- Run the `MacKeyboard.ahk` file
+- Put the `MacKeyboard.ahk` file or a shortcut to the file in your Autostart folder to run it automatically on startup.
+
+== Information
+
+The original work was done by link:https://github.com/stroebjo[stroebjo]. I've just fixed a few issues on windows 10 and aligned it to fit the Logitech K850 Keyboard using Mac Layout on Windows
+
+== How to use Mac Layout of K850 on Windows
+
+* FN + O – Switch from PC- to Mac-Layout
+
+* FN + P – Switch from Mac- back to PC-Layout
