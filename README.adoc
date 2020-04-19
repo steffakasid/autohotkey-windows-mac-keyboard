@@ -2,11 +2,24 @@
 
 This [AutoHotkey](http://www.autohotkey.com/) configuration file makes usual keyboard shortcuts work with an Apple keyboard on Windows. It has been testet with a german keyboard layout, but should work under different layouts as well.
 
+== Dependencies
+
+=== Using Chocolatery
+
+[source,sh]
+----
+choco install autohotkey
+choco install make
+----
+
+=== Manual Download
+- link:http://www.autohotkey.com/[AutoHotkey]
+- link:http://gnuwin32.sourceforge.net/packages/make.htm[make 4 windows]
+
 == Installation
 
-- Install [AutoHotkey](http://www.autohotkey.com/) 
-- Run the `MacKeyboard.ahk` file
-- Put the `MacKeyboard.ahk` file or a shortcut to the file in your Autostart folder to run it automatically on startup.
+- Run `make all -f MAKEFILE`
+- Put the `MacKeyboard.ahk` file or a shortcut to the file in your Autostart folder (`D:\Users\sid\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`) to run it automatically on startup.
 
 == Information
 
@@ -17,3 +30,11 @@ The original work was done by link:https://github.com/stroebjo[stroebjo]. I've j
 * FN + O – Switch from PC- to Mac-Layout
 
 * FN + P – Switch from Mac- back to PC-Layout
+
+
+
+== TODO
+
+* CMD & SHIFT & pos1
+* CMD & SHIFT & End
+* CMD & Backspace
