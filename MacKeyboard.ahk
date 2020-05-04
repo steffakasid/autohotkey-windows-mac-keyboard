@@ -12,6 +12,9 @@
 ;
 ; Debug action snippet: MsgBox You pressed Control-A while Notepad is active.
 
+; Enable KeyHistory for Debugging Key strokes
+; KeyHistory
+
 #InstallKeybdHook
 #SingleInstance force
 SetTitleMatchMode 2
@@ -30,8 +33,8 @@ F11::SendInput {Volume_Down}
 F12::SendInput {Volume_Up}
 
 ; remap original pos1, end
-LWin & Left:: SendInput {Home}
-LWin & Right:: SendInput {End}
+;LWin & Left::Send {Home}
+;LWin & Right::Send {End}
 
 ; Eject Key
 ;F20::SendInput {Insert} ; F20 doesn't show up on AHK anymore, see #3
@@ -55,7 +58,7 @@ LWin & Right:: SendInput {End}
 #s::Send, ^s
 
 ; Selecting
-#a::Send, ^a
+#a::^a
 
 ; Copying
 #c::Send, ^c
@@ -63,8 +66,15 @@ LWin & Right:: SendInput {End}
 ; Pasting
 #v::Send, ^v
 
+; KeePass Copy UserName
+#b::Send, ^b
+
 ; Cutting
 #x::Send, ^x
+
+; Deleting - THIS DOESN'T WORK
+; # & BackSpace::Delete
+LWin & BackSpace::Send {Delete}
 
 ; Opening
 #o::Send, ^o
@@ -93,6 +103,7 @@ Lwin & Tab::AltTab
 ; minimize windows
 #m::WinMinimize,a
 
+SC02B::#
 
 ; --------------------------------------------------------------
 ; OS X keyboard mappings for special chars
@@ -119,9 +130,6 @@ Lwin & Tab::AltTab
 ; Map Alt + E to €
 !e::SendInput {€}
 
-; Map Alt + - to –
-!-::SendInput {–}
-
 ; Map Alt + 8 to {
 !8::SendInput {{}
 
@@ -130,9 +138,6 @@ Lwin & Tab::AltTab
 
 ; Map Alt + - to ±
 !+::SendInput {±}
-
-; Map Alt + R to ®
-!r::SendInput {®}
 
 ; Map Alt + N to |
 !7::SendInput {|}
@@ -151,9 +156,6 @@ Shift & ^::>
 
 ; Map < to ^
 <::^
-
-; Map > to °
-Shift & <::°
 
 
 ; --------------------------------------------------------------
